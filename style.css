@@ -54,12 +54,12 @@ nav a {
     background-color: rgba(255, 255, 255, 0.1);
     padding: 0.8rem 1.5rem;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.9);
     margin-bottom: 1.5rem; /* Space between feature links box and welcome text */
 }
 
 .feature-links a {
-    color: #FFC371;
+    color: #e5a346;
     text-decoration: none;
     font-size: 1.2rem;
     transition: color 0.3s ease;
