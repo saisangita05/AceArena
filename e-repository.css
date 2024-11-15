@@ -1,0 +1,115 @@
+/* General Styling */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    /* background-color: #f6f8fa; */
+    background: #000000cf;
+}
+
+a {
+    text-decoration: none;
+    color: #000000;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Profile Header */
+.profile-header {
+    display: flex;
+    align-items: center;
+    background: linear-gradient(135deg, #ff0d0d, #fbf48f);
+    padding: 20px;
+    border-bottom: 1px solid #e1e4e8;
+}
+
+.profile-avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-right: 20px;
+}
+
+.profile-info h1 {
+    font-size: 1.8rem;
+    margin-bottom: 5px;
+}
+
+.profile-info p {
+    font-size: 1rem;
+    color: #fff;
+    margin-top: 5px;
+}
+
+/* Repository List */
+.repository-list {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+.repository-list h2 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: #fff;
+}
+
+.repository {
+    background-color: #ffffff;
+    padding: 15px;
+    border: 1px solid #e1e4e8;
+    border-radius: 6px;
+    margin-bottom: 15px;
+}
+
+.repository h3 {
+    font-size: 1.25rem;
+    margin-bottom: 8px;
+}
+
+.repository p {
+    font-size: 0.95rem;
+    color: #586069;
+    margin-bottom: 10px;
+}
+
+.repo-details {
+    font-size: 0.85rem;
+    color: #586069;
+    display: flex;
+    gap: 15px;
+}
+
+.repo-details span {
+    display: inline-flex;
+    align-items: center;
+}
+
+.repo-details span::before {
+    content: '';
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #e34c26; /* Example color */
+    margin-right: 5px;
+}
+
+/* Adjust language colors for specific languages */
+.repo-details span:first-child[data-lang="JavaScript"]::before {
+    background-color: #f1e05a;
+}
+
+.repo-details span:first-child[data-lang="Python"]::before {
+    background-color: #3572A5;
+}
+
+.repo-details span:first-child[data-lang="HTML"]::before {
+    background-color: #e34c26;
+}
