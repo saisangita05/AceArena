@@ -8,12 +8,13 @@ body {
     font-family: Arial, sans-serif;
     background: url('your-background-image.jpg') no-repeat center center fixed;
     background-size: cover;
-    color: #c9d1d9;
+    color: #b8da79;
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
     margin: 0;
+    background-color: rgb(228, 195, 132);
 }
 
 .profile-container {
