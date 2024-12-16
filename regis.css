@@ -9,7 +9,7 @@
 body {
     font-family: Arial, sans-serif;
     /* background: linear-gradient(to right, #750109, #c79706); */
-    background-color: #faf18e;
+    background-color: #0077b6;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -71,7 +71,7 @@ form textarea:focus,
 form select:focus {
     background-color: #e0e0e0;
     outline: none;
-    border-color: #c79706;
+    border-color:#0077b6;
 }
 
 /* Align gender and skills options slightly to the right */
@@ -87,7 +87,7 @@ form .checkbox-group {
 form input[type="radio"],
 form input[type="checkbox"] {
     margin-right: 5px;
-    accent-color: #c79706;
+    accent-color: #023e8a;
 }
 
 form button[type="submit"],

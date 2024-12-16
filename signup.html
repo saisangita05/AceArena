@@ -14,15 +14,17 @@
     <div class="container">
       <div class="forms-container">
         <div class="signin-signup">
-          <form action="#" class="sign-in-form">
+          <form action="#" class="sign-in-form" id="sign-in-form">
             <h2 class="title">Sign in</h2>
             <div class="input-field">
               <i class="fas fa-user"></i>
-              <input type="text" placeholder="Username" />
+              <input type="text" id="signin-username" placeholder="Username" />
+              <small class="error-message"></small>
             </div>
             <div class="input-field">
               <i class="fas fa-lock"></i>
-              <input type="password" placeholder="Password" />
+              <input type="password" id="signin-password" placeholder="Password" />
+              <small class="error-message"></small>
             </div>
             <input type="submit" value="Login" class="btn solid" />
             <p class="social-text">Or Sign in with social platforms</p>
@@ -41,19 +43,22 @@
               </a>
             </div>
           </form>
-          <form action="#" class="sign-up-form">
+          <form action="#" class="sign-up-form" id="sign-up-form">
             <h2 class="title">Sign up</h2>
             <div class="input-field">
               <i class="fas fa-user"></i>
-              <input type="text" placeholder="Username" />
+              <input type="text" id="signup-username" placeholder="Username" />
+              <small class="error-message"></small>
             </div>
             <div class="input-field">
               <i class="fas fa-envelope"></i>
-              <input type="email" placeholder="Email" />
+              <input type="email" id="signup-email" placeholder="Email" />
+              <small class="error-message"></small>
             </div>
             <div class="input-field">
               <i class="fas fa-lock"></i>
-              <input type="password" placeholder="Password" />
+              <input type="password" id="signup-password" placeholder="Password" />
+              <small class="error-message"></small>
             </div>
             <input type="submit" class="btn" value="Sign up" />
             <p class="social-text">Or Sign up with social platforms</p>
@@ -80,11 +85,10 @@
           <div class="content">
             <h3>See here!</h3>
             <p>
-              
-Welcome! If you haven't signed in yet, please sign up first. Just enter your name, email, and a password to create your account.<br/>
-            <button class="btn transparent" id="sign-up-btn">
-              Sign up
-            </button>
+              Welcome! If you haven't signed in yet, please sign up first. Just
+              enter your name, email, and a password to create your account.<br />
+              <button class="btn transparent" id="sign-up-btn">Sign up</button>
+            </p>
           </div>
           <img src="img/log (1).svg" class="image" alt="" />
         </div>
@@ -92,11 +96,9 @@ Welcome! If you haven't signed in yet, please sign up first. Just enter your nam
           <div class="content">
             <h3>Let's go!</h3>
             <p>
-                Now sign in to access exclusive content and features. Join us today!
+              Now sign in to access exclusive content and features. Join us today!
             </p>
-            <button class="btn transparent" id="sign-in-btn">
-              Sign in
-            </button>
+            <button class="btn transparent" id="sign-in-btn">Sign in</button>
           </div>
           <img src="img/register (1).svg" class="image" alt="" />
         </div>
