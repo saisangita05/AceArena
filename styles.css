@@ -102,6 +102,20 @@ form.sign-in-form {
   font-weight: 500;
 }
 
+/* Error message styles */
+input.error {
+  border: 2px solid black;
+}
+
+.error-message {
+  color: black;
+  font-size: 12px;
+  margin-top: 5px;
+  position: absolute;
+  bottom: -18px;
+  left: 10px;
+}
+
 .social-text {
   padding: 0.7rem 0;
   font-size: 1rem;
@@ -128,8 +142,8 @@ form.sign-in-form {
 }
 
 .social-icon:hover {
-  color: #ec3b64;
-  border-color: #ff4f69;
+  color: #0077b6;
+  border-color: #023e8a;
 }
 
 .btn {
@@ -148,8 +162,9 @@ form.sign-in-form {
 }
 
 .btn:hover {
-  background-color: #e53158;
+  background-color: #023e8a;
 }
+
 .panels-container {
   position: absolute;
   height: 100%;
@@ -168,7 +183,7 @@ form.sign-in-form {
   top: -10%;
   right: 48%;
   transform: translateY(-50%);
-  background-image: linear-gradient(to right, #e41325, #d46d14);
+  background-image: linear-gradient(to right, #0d7fdd, #5dc8ec);
   transition: 1.8s ease-in-out;
   border-radius: 50%;
   z-index: 6;
@@ -231,8 +246,7 @@ form.sign-in-form {
   transform: translateX(800px);
 }
 
-/* ANIMATION */
-
+/* Animations for Sign-Up mode */
 .container.sign-up-mode:before {
   transform: translate(100%, -50%);
   right: 52%;
@@ -270,6 +284,7 @@ form.sign-in-form {
   pointer-events: all;
 }
 
+/* Responsive styles */
 @media (max-width: 870px) {
   .container {
     min-height: 800px;
@@ -359,42 +374,11 @@ form.sign-in-form {
 
   .container.sign-up-mode .right-panel .image,
   .container.sign-up-mode .right-panel .content {
-    transform: translateY(0px);
-  }
-
-  .right-panel .image,
-  .right-panel .content {
     transform: translateY(300px);
   }
 
   .container.sign-up-mode .signin-signup {
     top: 5%;
-    transform: translate(-50%, 0);
-  }
-}
-
-@media (max-width: 570px) {
-  form {
-    padding: 0 1.5rem;
-  }
-
-  .image {
-    display: none;
-  }
-  .panel .content {
-    padding: 0.5rem 1rem;
-  }
-  .container {
-    padding: 1.5rem;
-  }
-
-  .container:before {
-    bottom: 72%;
-    left: 50%;
-  }
-
-  .container.sign-up-mode:before {
-    bottom: 28%;
-    left: 50%;
+    transform: translate(-50%, 0%);
   }
 }
