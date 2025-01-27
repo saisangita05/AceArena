@@ -1,39 +1,177 @@
+/* Base Styles */
 body {
     font-family: Arial, sans-serif;
-    background: #000000cf;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
     margin: 0;
+    padding: 0;
+    background-color: #f5f5dc; /* Beige */
 }
 
-.exam-container {
-    background: linear-gradient(135deg, #ff0d0d, #fbf48f);
+/* Container Styles */
+.container {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Instructions Panel */
+.instructions {
+    background-color: #4682b4; /* Steel Blue */
+    color: white;
     padding: 20px;
-    border-radius: 10px;
-    width: 300px;
-    min-height: 50%;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 20%;
+}
+
+.instructions h2 {
     text-align: center;
 }
 
-h2, h3, h4 {
-    color: #eeeeee;
+.instructions ol {
+    margin-top: 20px;
+    padding-left: 20px;
+}
+
+/* Question Status Card */
+.status-container {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    z-index: 999;
+}
+
+.status-container h3 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: bold;
+    color: #4682b4; /* Steel Blue */
+    text-align: center;
+}
+
+.question-status {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.question-status div {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    font-size: 14px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.question-status div:hover {
+    transform: scale(1.1);
+}
+
+.question-answered {
+    background-color: #30e95f; /* Green */
+    color: white;
+}
+
+.question-unanswered {
+    background-color: #f08080; /* Light Coral */
+    color: white;
+}
+
+.question-review {
+    background-color: #ffda62; /* Sandy Brown */
+    color: white;
+}
+
+/* Quiz Section */
+.quiz-container {
+    background-color: #f5f5dc; /* Beige */
+    flex-grow: 1;
+    padding: 40px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    border-radius: 8px;
+    margin: 20px;
+    position: relative;
+}
+
+.quiz-container h1 {
+    color: #333;
+}
+
+select, button {
+    margin: 10px;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.quiz-section {
+    margin-top: 20px;
+    text-align: left;
+    width: 100%;
+}
+
+.question {
+    margin-bottom: 20px;
+    font-size: 18px;
+}
+
+.options label {
+    display: block;
+    margin: 10px 0;
+    font-size: 16px;
+}
+
+.options input[type="radio"] {
+    margin-right: 10px;
+}
+
+/* Button Row */
+.button-row {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
 }
 
 button {
-    background-color: #000;
+    background-color: #4682b4; /* Steel Blue */
     color: white;
     border: none;
-    border-radius: 5px;
-    padding: 8px 16px;
     cursor: pointer;
-    margin-top: 10px;
+    transition: background-color 0.3s, transform 0.2s;
+    border-radius: 4px;
+    padding: 10px 20px;
 }
 
-#timer {
-    font-size: 1.2em;
-    color: #e63946;
-    margin-top: 10px;
+button:hover {
+    background-color: #5a9bd3; /* Lighter Blue */
+    transform: translateY(-2px);
+}
+
+/* Submit and Reset Buttons */
+#submit-quiz, #reset-quiz {
+    margin-top: 20px;
+    align-self: center;
+}
+
+.result {
+    margin-top: 20px;
+    font-weight: bold;
+    color: #333;
+}
+
+.status {
+    margin-bottom: 20px;
+    font-size: 16px;
+    color: #555;
 }

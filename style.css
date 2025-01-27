@@ -23,6 +23,7 @@ nav {
     z-index: 1000;
 }
 
+/* Logo Container */
 .logo-container {
     display: flex;
     align-items: center;
@@ -34,6 +35,35 @@ nav {
     height: 40px;
 }
 
+/* Middle Section (Search Bar) */
+.nav-middle {
+    flex-grow: 1;
+    margin: 0 1rem;
+    display: flex;
+    justify-content: center;
+}
+
+.search-bar {
+    width: 60%;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    border: none;
+    outline: none;
+    font-size: 1rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.search-bar::placeholder {
+    color: #ccc;
+}
+
+/* Right Section */
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
 nav ul {
     list-style: none;
     display: flex;
@@ -43,6 +73,15 @@ nav ul {
 nav a {
     color: white;
     text-decoration: none;
+}
+
+/* Profile Picture */
+.profile-pic {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 /* Feature Links Box Styling */

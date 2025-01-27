@@ -5,13 +5,71 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MyWall - Profile</title>
     <link rel="stylesheet" href="mywall.css">
+    <style>
+        /* General styling for the modal */
+        .modal {
+            display: none; /* Hidden by default */
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            width: 90%;
+            max-width: 500px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .modal-content h2 {
+            margin-top: 0;
+        }
+
+        .close-modal {
+            float: right;
+            cursor: pointer;
+            font-size: 18px;
+        }
+
+        .modal form input,
+        .modal form button {
+            display: block;
+            width: 100%;
+            margin: 10px 0;
+            padding: 10px;
+        }
+
+        .save-profile-button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .save-profile-button:hover {
+            background-color: #0056b3;
+        }
+
+        /* Styling for background blur */
+        .blurred {
+            filter: blur(5px);
+        }
+    </style>
 </head>
 <body>
 
-<div class="profile-container">
+<div id="mainContent" class="profile-container">
     <div class="profile-photo-section">
         <img src="photo.jpg" alt="Profile Photo" class="profile-photo">
-        <button class="edit-profile-button">Edit Profile</button>
+        <button class="edit-profile-button" onclick="openModal()">Edit Profile</button>
     </div>
     <div class="profile-details-section">
         <h2>Sai Sangita</h2>
@@ -31,6 +89,65 @@
         </div>
     </div>
 </div>
+
+<!-- Modal for editing profile -->
+<div id="editProfileModal" class="modal">
+    <div class="modal-content">
+        <span class="close-modal" onclick="closeModal()">&times;</span>
+        <h2>Edit Profile</h2>
+        <form id="editProfileForm" onsubmit="saveProfile(event)">
+            <input type="text" id="name" placeholder="Name" value="Sai Sangita">
+            <input type="text" id="username" placeholder="Username" value="@saisangita_05">
+            <input type="email" id="email" placeholder="Email" value="saisangita@gmail.com">
+            <input type="number" id="age" placeholder="Age" value="20">
+            <input type="text" id="gender" placeholder="Gender" value="Female">
+            <input type="text" id="address" placeholder="College Address" value="1234 College St, University City">
+            <input type="text" id="branch" placeholder="Branch" value="Computer Science">
+            <input type="text" id="skills" placeholder="Technical Skills" value="C, Java, Python">
+            <button type="submit" class="save-profile-button">Save</button>
+        </form>
+    </div>
+</div>
+
+<script>
+    function openModal() {
+        document.getElementById('editProfileModal').style.display = 'flex';
+        document.getElementById('mainContent').classList.add('blurred');
+    }
+
+    function closeModal() {
+        document.getElementById('editProfileModal').style.display = 'none';
+        document.getElementById('mainContent').classList.remove('blurred');
+    }
+
+    function saveProfile(event) {
+        event.preventDefault(); // Prevent form from refreshing the page
+
+        // Get the form values
+        const name = document.getElementById('name').value;
+        const username = document.getElementById('username').value;
+        const email = document.getElementById('email').value;
+        const age = document.getElementById('age').value;
+        const gender = document.getElementById('gender').value;
+        const address = document.getElementById('address').value;
+        const branch = document.getElementById('branch').value;
+        const skills = document.getElementById('skills').value;
+
+        // Update the profile details
+        document.querySelector('.profile-details-section h2').textContent = name;
+        document.querySelector('.username').textContent = username;
+        const detailsList = document.querySelectorAll('.profile-details ul li');
+        detailsList[0].innerHTML = `<strong>Email:</strong> ${email}`;
+        detailsList[1].innerHTML = `<strong>Age:</strong> ${age}`;
+        detailsList[2].innerHTML = `<strong>Gender:</strong> ${gender}`;
+        detailsList[3].innerHTML = `<strong>College Address:</strong> ${address}`;
+        detailsList[4].innerHTML = `<strong>Branch:</strong> ${branch}`;
+        detailsList[5].innerHTML = `<strong>Technical Skills:</strong> ${skills}`;
+
+        // Close the modal
+        closeModal();
+    }
+</script>
 
 </body>
 </html>

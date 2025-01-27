@@ -5,6 +5,60 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>User Repositories</title>
     <link rel="stylesheet" href="e-repository.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .profile-header {
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+        .profile-avatar {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            margin-right: 20px;
+        }
+        .profile-info h1 {
+            margin: 0;
+        }
+        .repository-list {
+            padding: 20px;
+        }
+        .repository {
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+        .repo-details span {
+            margin-right: 10px;
+        }
+        .repo-actions {
+            margin-top: 10px;
+        }
+        .upload-container {
+            display: flex;
+            justify-content: flex-end;
+            padding: 10px;
+        }
+        .upload-container input {
+            display: none;
+        }
+        .upload-button-global {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .upload-button-global:hover {
+            background-color: #0056b3;
+        }
+    </style>
 </head>
 <body>
 
@@ -13,22 +67,35 @@
         <img src="https://avatars.githubusercontent.com/u/1?v=4" alt="User Avatar" class="profile-avatar">
         <div class="profile-info">
             <h1>Username</h1>
-            <p>@username</p>
+            <p>sai sangita</p>
             <p>Bio: Enthusiastic developer working on exciting projects.</p>
         </div>
     </header>
 
+    <!-- Upload Button -->
+    <div class="upload-container">
+        <input type="file" id="upload-global" accept=".zip,.tar,.rar,.7z">
+        <label for="upload-global" class="upload-button-global">Upload Repository</label>
+    </div>
+
     <!-- Repository List -->
-    <main class="repository-list">
+    <main class="repository-list" id="repository-list">
         <h2>Repositories</h2>
+
+        <!-- Example Repositories -->
         <div class="repository">
             <h3><a href="#">Repository Name 1</a></h3>
             <p>Short description of the repository and its purpose.</p>
             <div class="repo-details">
-                <span>JavaScript</span>
+                <span data-lang="JavaScript">JavaScript</span>
                 <span>⭐ 123</span>
                 <span>🍴 45</span>
                 <span>Updated 2 days ago</span>
+            </div>
+            <div class="repo-actions">
+                <input type="file" id="upload-repo-1" class="upload-repo" hidden>
+                <label for="upload-repo-1" class="upload-button">Upload</label>
+                <button class="download-button">Download</button>
             </div>
         </div>
 
@@ -36,16 +103,59 @@
             <h3><a href="#">Repository Name 2</a></h3>
             <p>Description of another repository.</p>
             <div class="repo-details">
-                <span>Python</span>
+                <span data-lang="Python">Python</span>
                 <span>⭐ 210</span>
                 <span>🍴 30</span>
                 <span>Updated 5 days ago</span>
             </div>
+            <div class="repo-actions">
+                <input type="file" id="upload-repo-2" class="upload-repo" hidden>
+                <label for="upload-repo-2" class="upload-button">Upload</label>
+                <button class="download-button">Download</button>
+            </div>
         </div>
-
-        <!-- Add more repositories as needed -->
 
     </main>
 
+    <script>
+        // JavaScript to handle upload actions
+        const repositoryList = document.getElementById('repository-list');
+
+        document.getElementById('upload-global').addEventListener('change', (event) => {
+            const file = event.target.files[0];
+
+            if (file) {
+                const fileName = file.name;
+                const reader = new FileReader();
+
+                reader.onload = () => {
+                    const newRepo = document.createElement('div');
+                    newRepo.className = 'repository';
+
+                    newRepo.innerHTML = `
+                        <h3><a href="#">${fileName}</a></h3>
+                        <p>A new repository uploaded by the user.</p>
+                        <div class="repo-details">
+                            <span data-lang="Unknown">Unknown</span>
+                            <span>⭐ 0</span>
+                            <span>🍴 0</span>
+                            <span>Updated just now</span>
+                        </div>
+                        <div class="repo-actions">
+                            <input type="file" class="upload-repo" hidden>
+                            <label class="upload-button">Upload</label>
+                            <button class="download-button">Download</button>
+                        </div>
+                    `;
+
+                    repositoryList.appendChild(newRepo);
+
+                    alert(`Uploaded: ${fileName}`);
+                };
+
+                reader.readAsDataURL(file);
+            }
+        });
+    </script>
 </body>
 </html>

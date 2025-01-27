@@ -20,7 +20,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: linear-gradient(135deg, #ff0d0d, #fbf48f);
+    background: linear-gradient(to right, #0077b6, #0096c7);
     color: white;
     padding: 1rem;
     border-radius: 8px;
@@ -111,7 +111,7 @@ body {
 }
 
 .ask-question-section button {
-    background-color: #f30d0d;
+    background-color: #0077b6;
     color: white;
     border: none;
     padding: 0.5rem 1rem;
@@ -141,7 +141,7 @@ body {
 
 .view-answers {
     margin-top: 10px;
-    color: #f30d0d;
+    color: #023e8a;
     background: none;
     border: none;
     cursor: pointer;

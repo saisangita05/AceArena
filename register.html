@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - EdConnect</title>
+    <link rel="stylesheet" href="regis.css">
+</head>
+<body>
+
+    <div class="registration-container">
+        <h2>Registration Form</h2>
+        <form>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name">
+            <label for="id">ID:</label>
+            <input type="text" id="id" name="id">
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password">
+            <label for="email">E-Mail ID:</label>
+            <input type="email" id="email" name="email">
+            <label for="age">Age:</label>
+            <input type="number" id="age" name="age" min="1">
+            <label>Gender:</label>
+            <input type="radio" name="gender" value="male" id="male">
+            <!-- <label for="male">Male</label> -->
+             male
+            <input type="radio" name="gender" value="female" id="female">
+            <!-- <label for="female">Female</label> -->
+             female
+            <input type="radio" name="gender" value="other" id="other">
+            <label for="other">Other</label>
+            <label for="address">College Address:</label>
+            <textarea id="address" name="address" rows="3"></textarea>
+            <label for="branch">Branch:</label>
+            <select id="branch" name="branch">
+                <option value="cse">Computer Science</option>
+                <option value="ece">Electronics and Communication</option>
+                <option value="mech">Mechanical</option>
+                <option value="civil">Civil</option>
+            </select>
+            <label>Technical Skills:</label>
+            <input type="checkbox" name="skills" value="c" id="skill-c">
+            <!-- <label for="skill-c">C</label> -->
+             c
+            <input type="checkbox" name="skills" value="java" id="skill-java">
+            <!-- <label for="skill-java">Java</label> -->
+             java
+            <input type="checkbox" name="skills" value="python" id="skill-python">
+            <!-- <label for="skill-python">Python</label> -->
+            python
+            <input type="checkbox" name="skills" value="jsp" id="skill-jsp">
+            <!-- <label for="skill-jsp">JSP</label> -->
+             jsp
+            <label for="resume">Resume Upload:</label>
+            <input type="file" id="resume" name="resume">
+            <label for="photo">Photo Upload:</label>
+            <input type="file" id="photo" name="photo">
+            <button type="submit">Submit</button>
+            <button type="reset">Reset</button>
+        </form>
+    </div>
+
+</body>
+<script src="regis.js"></script>
+
+</html>

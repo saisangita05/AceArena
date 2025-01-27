@@ -1,0 +1,58 @@
+
+/* Features Section Styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to bottom right, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.7));
+    background-size: cover;
+    backdrop-filter: blur(10px);
+}
+
+.features-section {
+    padding: 50px 20px;
+    background: #1a1a1a; /* Dark background */
+    color: white;
+    text-align: center;
+}
+
+.feature-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive grid */
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.feature-item {
+    background: rgba(255, 255, 255, 0.1); /* Transparent background */
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(3, 117, 217, 0.3);
+    backdrop-filter: blur(5px);
+    transition: transform 0.3s ease-in-out;
+    overflow: hidden;
+}
+
+.feature-item:hover {
+    transform: translateY(-10px); /* Hover effect */
+}
+
+.feature-item img {
+    max-width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.feature-item h3 {
+    color: #00BFFF;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.feature-item p {
+    font-size: 1rem;
+    line-height: 1.5;
+}
